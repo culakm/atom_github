@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Plocha</title>
+  <script>
+  //onclick="document.getElementById('vysledok').innerHTML=Date()"
+  function vypocet() {
+      var s = document.getElementById("s").value;
+      var a = document.getElementById("a").value;
+      var b = document.getElementById("b").value;
+      //alert("s: " + s + ",a: " + a + ",b: " + b );
+
+      var q1 = (s/2);
+      var q2 = (a*b);
+      var q3 = (parseFloat(a)+parseFloat(b));
+      var q4 = q1 - q2;
+      var vysledok2 = q4/q3;
+      var vysledok = ((s/2)-(a*b))/(parseFloat(a)+parseFloat(b));
+      var povrch = 2*((a*b)+(b*vysledok)+(a*vysledok));
+      //alert("q1:"+q1+","+ "q2:"+q2+","+"q3:"+q3+","+"q4:"+q4);
+     // alert("(("+s+"/2)-("+a+"*"+b+"))/("+a+"+"+b+") = " + vysledok + " ? " + vysledok2);
+ // document.getElementById("vysledok").innerHTML = ((s/2)-(a*b))/(a+b);//myFunction(4, 3);
+    document.getElementById("vysledok").innerHTML = vysledok;//myFunction(4, 3);
+    document.getElementById("povrch").innerHTML = povrch;
+    }
+
+  </script>
+</head>
+
+<body>
+<p>
+<label for="s">povrch:</label>
+<input type="text" id="s" name="s">
+</p>
+<p>
+<label for="a">a:</label>
+<input type="text" id="a" name="a">
+</p>
+<p>
+<label for="b">b:</label>
+<input type="text" id="b" name="b">
+</p>
+<p>
+<button class='small' onclick=vypocet();>Vysledok</button>
+</p>
+<p><label for="vysledok">c:</label><p id="vysledok"></p>
+<label for="povrch">povrch:</label><p id="povrch"></p>
+</p>
+
+</body>
+</html>
